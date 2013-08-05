@@ -6,10 +6,28 @@
 Intermediate Geoprocessing with Python - AR GIS Users Symposium 2013
 ====================================================================
 
-Chad Cooper, instructor
-chad@cast.uark.edu
+Chad Cooper, instructor - chad@cast.uark.edu
 
-Contents:
+In this workshop we will acquire data, process it, examine it, and manipulate it 
+into a usable GIS dataset. 
+
+Things you should know already:
+
+* Basic GIS working knowledge
+* Basic Python proficiency 
+  
+  * Data types
+    
+    * Strings
+    * Lists
+    * Dictionaries
+    
+* Basic ``arcpy`` proficiency
+
+  * Accessing datasets
+  * Listing/describing data
+
+Curriculum:
 
 .. toctree::
    :maxdepth: 3

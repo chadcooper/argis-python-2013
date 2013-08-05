@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Working with objects &mdash; Intermediate geoprocessing with Python, AR GIS Users Forum 2013 1.0 documentation</title>
+    <title>What we will accomplish &mdash; Intermediate geoprocessing with Python, AR GIS Users Forum 2013 1.0 documentation</title>
     
     <link rel="stylesheet" href="_static/cloud.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -29,8 +29,8 @@
     <script type="text/javascript" src="_static/jquery.cookie.js"></script>
     <script type="text/javascript" src="_static/cloud.js"></script>
     <link rel="top" title="Intermediate geoprocessing with Python, AR GIS Users Forum 2013 1.0 documentation" href="index.html" />
-    <link rel="next" title="Working with geometries" href="geometries.html" />
-    <link rel="prev" title="Exploiting the interwebz" href="web.html" /> 
+    <link rel="next" title="Working with files" href="files.html" />
+    <link rel="prev" title="Intermediate Geoprocessing with Python - AR GIS Users Symposium 2013" href="index.html" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
@@ -43,10 +43,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="geometries.html" title="Working with geometries"
+          <a href="files.html" title="Working with files"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="web.html" title="Exploiting the interwebz"
+          <a href="index.html" title="Intermediate Geoprocessing with Python - AR GIS Users Symposium 2013"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="index.html">Intermediate geoprocessing with Python, AR GIS Users Forum 2013 1.0 documentation</a> &raquo;</li>
  
@@ -60,8 +60,32 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="working-with-objects">
-<h1>Working with objects<a class="headerlink" href="#working-with-objects" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="what-we-will-accomplish">
+<h1>What we will accomplish<a class="headerlink" href="#what-we-will-accomplish" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Fetch files from web<ul>
+<li>CSV - NBI bridge data</li>
+<li>json/geojson - something from github</li>
+<li>raster data</li>
+<li>scrape some data</li>
+</ul>
+</li>
+<li>Parse said files<ul>
+<li><tt class="docutils literal"><span class="pre">csv</span></tt> module</li>
+<li><tt class="docutils literal"><span class="pre">json</span></tt> module</li>
+<li><tt class="docutils literal"><span class="pre">arcpy</span></tt> methods</li>
+</ul>
+</li>
+<li>Data to fgdb table</li>
+<li>Data to featureclass<ul>
+<li>work with the geometry objects</li>
+<li>work with spatial reference objects</li>
+</ul>
+</li>
+<li>Code into ArcToolbox Tool</li>
+<li>Code into Python Toolbox</li>
+<li>Error handling and logging</li>
+</ul>
 </div>
 
 
@@ -72,10 +96,10 @@
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="what-we-are-doing.html">What we will accomplish</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">What we will accomplish</a></li>
 <li class="toctree-l1"><a class="reference internal" href="files.html">Working with files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web.html">Exploiting the interwebz</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Working with objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Working with objects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geometries.html">Working with geometries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="spatial-refs.html">Working with spatial references</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Tools and tooboxes</a></li>
@@ -83,15 +107,15 @@
 
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="_sources/objects.txt"
+    <li><a href="_sources/what-we-are-doing.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="web.html"
-                        title="previous chapter">Exploiting the interwebz</a></p>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Intermediate Geoprocessing with Python - AR GIS Users Symposium 2013</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="geometries.html"
-                        title="next chapter">Working with geometries</a></p>
+  <p class="topless"><a href="files.html"
+                        title="next chapter">Working with files</a></p>
         </div>
       </div>
       <div class="clearer"></div>
@@ -105,10 +129,10 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="geometries.html" title="Working with geometries"
+          <a href="files.html" title="Working with files"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="web.html" title="Exploiting the interwebz"
+          <a href="index.html" title="Intermediate Geoprocessing with Python - AR GIS Users Symposium 2013"
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="index.html">Intermediate geoprocessing with Python, AR GIS Users Forum 2013 1.0 documentation</a> &raquo;</li>
  

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -8,8 +10,9 @@
     
     <title>Working with files &mdash; Intermediate geoprocessing with Python, AR GIS Users Forum 2013 1.0 documentation</title>
     
-    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/cloud.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -23,11 +26,16 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="_static/cloud.js"></script>
     <link rel="top" title="Intermediate geoprocessing with Python, AR GIS Users Forum 2013 1.0 documentation" href="index.html" />
     <link rel="next" title="Exploiting the interwebz" href="web.html" />
-    <link rel="prev" title="Intermediate Geoprocessing with Python - AR GIS Users Symposium 2013" href="index.html" /> 
+    <link rel="prev" title="What we will accomplish" href="what-we-are-doing.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
+    <div class="relbar-top">
+        
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -36,37 +44,16 @@
              accesskey="I">index</a></li>
         <li class="right" >
           <a href="web.html" title="Exploiting the interwebz"
-             accesskey="N">next</a> |</li>
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="index.html" title="Intermediate Geoprocessing with Python - AR GIS Users Symposium 2013"
-             accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Intermediate geoprocessing with Python, AR GIS Users Forum 2013 1.0 documentation</a> &raquo;</li> 
+          <a href="what-we-are-doing.html" title="What we will accomplish"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="index.html">Intermediate geoprocessing with Python, AR GIS Users Forum 2013 1.0 documentation</a> &raquo;</li>
+ 
       </ul>
     </div>
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-<h3><a href="index.html">Table Of Contents</a></h3>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">Working with files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="web.html">Exploiting the interwebz</a></li>
-<li class="toctree-l1"><a class="reference internal" href="objects.html">Working with objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="geometries.html">Working with geometries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html">Tools and tooboxes</a></li>
-</ul>
-
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/files.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">Intermediate Geoprocessing with Python - AR GIS Users Symposium 2013</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="web.html"
-                        title="next chapter">Exploiting the interwebz</a></p>
-        </div>
-      </div>
+    </div>
+  
 
     <div class="document">
       <div class="documentwrapper">
@@ -81,8 +68,36 @@
           </div>
         </div>
       </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="what-we-are-doing.html">What we will accomplish</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Working with files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web.html">Exploiting the interwebz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Working with objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="geometries.html">Working with geometries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spatial-refs.html">Working with spatial references</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Tools and tooboxes</a></li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/files.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="what-we-are-doing.html"
+                        title="previous chapter">What we will accomplish</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="web.html"
+                        title="next chapter">Exploiting the interwebz</a></p>
+        </div>
+      </div>
       <div class="clearer"></div>
     </div>
+    <div class="relbar-bottom">
+        
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -91,17 +106,21 @@
              >index</a></li>
         <li class="right" >
           <a href="web.html" title="Exploiting the interwebz"
-             >next</a> |</li>
+             >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="index.html" title="Intermediate Geoprocessing with Python - AR GIS Users Symposium 2013"
-             >previous</a> |</li>
-        <li><a href="index.html">Intermediate geoprocessing with Python, AR GIS Users Forum 2013 1.0 documentation</a> &raquo;</li> 
+          <a href="what-we-are-doing.html" title="What we will accomplish"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="index.html">Intermediate geoprocessing with Python, AR GIS Users Forum 2013 1.0 documentation</a> &raquo;</li>
+ 
       </ul>
     </div>
+    </div>
+
     <div class="footer">
         &copy; Copyright 2013, Center for Advanced Spatial Technologies.
-      Last updated on Aug 04, 2013.
+      Last updated on Aug 05, 2013.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
     </div>
+    <!-- cloud_sptheme 1.4 -->
   </body>
 </html>
