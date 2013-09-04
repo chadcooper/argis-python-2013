@@ -1,0 +1,718 @@
+﻿Arkansas GIS Users Forum
+2013 Symposium Workshops
+
+
+(1)        Lecture - ESRI Geodatabases
+(2)         GIS for the Masses - Enabling Geospatial Enterprise
+(3)         Census (American Community Survey)
+(4)         Using the Power of Google Analytics and Google Maps
+(5)         Intermediate Geoprocessing with Python
+(6)         How to Use Geostor
+(7)         The integration of visualization strategies in innovative and effective GIS map design
+(8)         Connecting the Dots - “An Introduction to LiDAR Technology”
+(9)         Developing Custom GIS Tools with ArcGIS ModelBuilder
+(10)        Object-Based Image Analysis with PCI's ArcGIS Geo-Imaging Tools and eCognition
+(11)         GIS Data Collection using ArcGIS Mobile with Trimble Positions
+(12)         ArcGIS Server
+(13)         Beginners guide to ArcGIS 10.1 (Hands-On)
+(14)         LiDAR Data Processing Hands-On Workshop
+(15)         Introduction to GeoMedia 2013
+(16)         ArcGIS Online
+(17)         Getting a Grasp on the Nebulous GIS “Cloud”
+(18)         Mobile Maps – All the Cool Kids are Doing It!
+(19)         A GIS workflow for Physical Addressing and E9-1-1 Data Maintenance
+(20)         Storm Spotter Training 2013
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+________________
+
+
+
+
+(1) Workshop:                ESRI Geodatabases
+
+
+Lecture – $50 – Monday afternoon
+
+
+What is a Geodatabase?  Why do I need it? What can do with it?  Come get an overview of what an ESRI Geodatabase can offer.  This short course will provide a basic understanding of the different types and functionality of ESRI Geodatabases and how they can help make you successful.
+
+
+
+
+Presenter
+Richie Pierce
+President
+a.c.t.GeoSpatial Inc. 
+2900 Percy Machin Drive, Suite One
+North Little Rock, AR  72114
+P: (501) 771-2985
+F: (501) 791-1930
+rpierce@actgeospatial.com
+
+
+
+Bio:
+
+
+Richie Pierce is President of a.c.t.GeoSpatial Inc. and has been in the GIS/mapping field for sixteen years.  He graduated with a B.S. degree in Geographic Information Sciences in 1997 and started his career with Civil Engineering/Surveying.  After working as a GIS mapping technician for many years, Richie became the Cadastral Mapping Specialist at the Arkansas Geographic Information Office (AGIO).  He then moved back to the private sector and continues his career at a.c.t.GeoSpatial Inc.
+________________
+
+(2) Workshop:                GIS for the Masses - Enabling Geospatial Enterprise
+
+
+Hands-On Computer Lab - $65 – Monday Afternoon
+
+
+Does your organization or municipality have people who need to use GIS in their daily work, but barely know what a GIS is, much less how to use it well?  Intergraph’s new GeoMedia Smart Client provides an answer to a problem that is almost as old as GIS itself, "How can you provide simple-to-use geospatial business workflows to non-GIS experts that are both cost-effective and manageable?” This new product provides geospatial desktop capabilities in a server-based web environment to reduce the cost of ownership for geospatial enabled workflows. The “smart client” is a Java-based client connected to a geospatial server providing data access and processing. The client software uses a single-click installation, so there are no administrative costs per client. GeoMedia Smart Client uses workflow configuration and rules definition tools to implement highly focused and efficient workflows without the need to develop and maintain extensive and expensive custom code. This workshop will provide detailed demonstrations of GeoMedia Smart Client, its administration, and workflow configuration. 
+
+Presenter
+Joseph R. “Joe Bob” Penor
+Staff Software Scientist
+Geospatial Operations: GIS Product Line Specialist
+Intergraph
+5051 Peachtree Corners Circle, Suite 100
+Norcross, GA 30092
+P: (770) 776-3400 x 3469
+F: (770) 776-3500
+joe.penor@intergraph.com
+
+
+
+
+
+
+Bio:
+Joseph R. “Joe Bob” Penor is a Staff Software Scientist and the GIS Product Line Specialist within Intergraph’s Security, Government & Infrastructure (SG&I) division.  Joe Bob obtained his B.S. in biology from the University of Arkansas at Little Rock, focusing on wildlife management. He performed his M.S. work at the University of Arkansas at Monticello in the School of Forest Resources with Dr. Bob Weih.  Prior to joining Intergraph, he worked as the GIS Lab Manager at the University of Arkansas at Little Rock, working on various GIS projects with the State Data Center and instructing undergraduates in geomatics (GIS/GPS/RS) technologies.  Today, Joe Bob is still active with the Arkansas GIS Users Forum as a 17-year member and past officer.  In addition, he is an active member of both ASPRS Potomac Region and the Virginia Association for Mapping and Land Information Systems (VAMLIS) in his current home state of Virginia.  
+________________
+
+
+
+(3) Workshop:                Understanding and Using Census Data for Analysis and Mapping
+
+
+Hands-On Computer Lab - $65 – Monday Afternoon
+
+
+Learn what American Community Survey (ACS) is, why it is important, what are 1, 3 and 5-year estimates and how to access the data for use in GIS. Learn about other Census data products though hands-on training using the web and desktop tools made available by U.S Census Bureau including American FactFinder Data Tool and DataFerrett Basic and Advanced.
+
+
+Presenter(s)
+Inderpreet Singh Farmahan (Sunny)
+Director, GIS Applications Laboratory
+Institute for Economic Advancement
+University of Arkansas at Little Rock
+
+
+Craig Best
+Supervisory Geographer
+Chicago Regional Office
+U.S Census Bureau
+
+
+Bio:
+
+
+Craig Best has worked 28+ years for U.S Census Bureau as Geographer, during this time he has played an instrumental role in the development of new data and data dissemination products made available by U.S Census bureau.
+Inderpreet Singh Farmahan (Sunny) works as Director of the Geographical Applications Laboratory. He provides GIS support to Institute for Economic Advancement, College of Business and other University of Arkansas departments.
+________________
+
+
+
+(4) Workshop:                Using the Power of Google Analytics and Google Maps
+
+
+Lecture - $50 – Monday Afternoon
+
+
+An Overview of the usage of Google Analytics data within your web based products, and how that data can fast track improvements to the web based service you provide.  Includes discussion and implementation of code into your site; and overview of the types of traffic data obtained from site visitors.   There will also be discussion on the use of Google Maps and Earth to display your data to those users who still prefer using Google’s mapping products. 
+
+
+
+
+Presenter
+Mike Jezierski
+Arkansas Game and Fish Commission
+Geographic Information Systems Analyst – GIS Section- IT Division
+#2 Natural Resources Drive | Little Rock, AR 72205
+P. (501) 223-6451 
+C. (501) 920-7142
+mjjezierski@agfc.state.ar.us 
+www.gis.agfc.com
+-92.38735, 34.75925
+
+
+
+
+Bio:
+GIS Analyst for the Arkansas Game and Fish Commission for the last 12 years. Originally hails from Chicago, IL, but currently resides in Benton, Arkansas with wife Misty, and son Josef.  
+________________
+
+
+
+(5) Workshop:                Intermediate Geoprocessing with Python
+
+
+Hands-On Computer Lab - $65 – Monday Afternoon
+
+
+This 4-hour course will cover geoprocessing with ArcGIS 10.1 utilizing the arcpy package; other 3rd party Python packages will be discussed. Students interested in taking this course MUST have previous experience writing Python scripts from scratch and should be very comfortable working at the Windows command line. Topics covered may include data mining and screen scraping, effective error handling and logging, working with geometries, and writing custom code for Toolboxes.
+
+
+
+
+Presenter
+Chad Cooper
+Geospatial Research and Development Specialist
+Center for Advanced Spatial Technologies (CAST)
+University of Arkansas
+Fayetteville, AR  72701
+P. (479) 575-6159
+F. (479) 575-5218
+chad@cast.uark.edu
+
+
+
+
+Bio:
+Chad has been using Python since 2007 when he first realized that by automating mundane everyday tasks, he could be even lazier. Since then he has used Python in GIS, 3D modeling, GUI and web programming, and enterprise data management while also publishing a few Python-related articles along the way. Chad is active in the Python community where he served as conference chair for pyArkansas 2012 and is currently the poster session co-chair for PyCon 2013. In the GIS community, Chad is a member of the Executive Committee of the Arkansas GIS User's Forum and on the planning committee for the 2014 MAGIC conference. 
+________________
+
+
+
+(6) Workshop:                How to Use Geostor
+
+
+Lecture – Free – Monday Afteroon
+
+
+GeoStor is the state's official GIS platform.  This is where users go to find and discover GIS data about Arkansas that can be accessed at no fee.  The system has many facets.   This workshop is designed to give users navigation throughout the GeoStor user interface. Topics to be covered include keyword searches, terms used by the system, accessing data, understanding metadata and the ISO Topic Categories.  We will also examine apps and provide a discussion on the FTP access to dynamic vectors and imagery. The system base maps and feature services will also be discussed to show users how those capabilities can alleviate the need to download large files. The workshop will cover any questions and open discussion about user’s needs.  Users need a basic understanding of GIS to benefit from this workshop.
+
+
+Presenter
+Shelby Johnson
+State Geographic Officer
+Arkansas Geographic Information Office
+One Capitol Mall, Suite 2B900
+Little Rock, AR  72201
+P. (501) 682-2767
+shelby.johnson@arkansas.gov
+
+
+Bio:
+Shelby is a native of Madison County, Arkansas and serves as the State Geographic Information Officer of Arkansas. He directs the Arkansas Geographic Information Office and reports directly to the Governor. He previously worked as a Research Specialist at the Center for Advanced Spatial Technologies at the University of Arkansas. He has over 18 years of experience in Geographic Information Systems (GIS).  He has served several leadership roles in Arkansas and was instrumental in organizing the State Land Information Board which was later renamed the State GIS Board. Shelby is responsible for assisting the State GIS Board in building a coordinated GIS system to meet the needs of the people of Arkansas.
+Shelby has been nationally recognized through serving on the National States Geographic Information Council Board of Directors from 2001 to 2005. In 2001 he was selected to participate in the prestigious LeadAR program that grooms outstanding adults in Arkansas for future leadership roles. He was selected to serve on a research committee of the National Academy of Science developing a national vision for a landownership database of the United States. In 2007 he was honored with a Life Time Achievement Award by the Arkansas GIS Users Forum for his contribution to the GIS community.   He holds a Bachelor of Arts degree in Geography from the University of Arkansas.
+Shelby, wife Belinda and their son Luke live in Little Rock, Arkansas. In his spare time, Shelby loves riding bicycles and motorcycles, and kayaking.
+	
+
+________________
+
+
+(7) Workshop:                The integration of visualization strategies in innovative and                                         effective GIS map design
+
+
+ Lecture – Free – Monday Afternoon
+
+
+New design strategies are re-emerging from early 20th Century psychological theory, and can assist us in creating maps that are more effective in communicating complex spatial relationships.  When GIS-generated maps leave the hands of the GISP or GIS technician, they are often scrutinized as communicative tools in addition to representations of data analysis. The gap between data management and communication is often broad, and can create misleading and fraudulent maps. So, it is through the use of spatial visualization strategies, aspects of visual hierarchy, and an understanding of spatial perception, that more effective GIS-produced maps can become effective and valuable communication tools. Practical advice and visual examples of spatial visualization techniques, cartographic element dominance, and end-user percipience are used to guide us from theoretical cartography to practical GIS.  Nowadays, there is no reason that the future of GIS should include confusing, misleading, and fraudulent maps. 
+
+
+Presenter
+Dr. Thomas Paradise
+Department of Geosciences
+University of Arkansas
+F11 Stone House South
+346 Arkansas Avenue
+Fayetteville, AR 72701
+P. (479) 575-4359
+F. (479) 575-3469
+paradise@uark.edu
+
+
+
+Bio:
+Tom Paradise is a geography professor at the University of Arkansas, and the former Director of the Fahd Center for Middle East Studies. He comes from a diverse background in the cartography/GIS, environmental sciences, architecture, Middle East and North Africa geography. Having researched and mapped the unique city of Petra, Jordan since the 1990s, Paradise has published more than 80 articles, chapters, and maps on Petra, also advising foreign agencies on his expertise. He has published more than 2000 maps for agencies, authors, and publishers. His projects have included thematic and reference maps for Jordan, Tunisia, Yemen, Arkansas, Hawai‘i, Arizona, and the US Departments of State, Defense, and UNESCO.  He was the cartographer and author of the award-winning Atlas of Hawai‘i, Student Atlas of Hawai’i, and Arkansas: an Illustrated Atlas.  
+
+
+Paradise has taught in Rome, Venice, Tunisia, Amman, and in the US in Georgia, Hawai’i, Arizona, California, and Arkansas.
+________________
+
+
+
+(8) Workshop:                        Connecting the Dots
+                                “An Introduction to LiDAR Technology”
+
+
+Lecture – Free – Monday Afternoon
+
+
+Technical expertise and funding are two barriers to this 3D survey technology. This workshop will provide a basic overview of LiDAR including product examples, parameters that will drive costs, caveats to uses, process workflow and resources necessary for most LiDAR projects.  This workshop is for those with little or no experience with LiDAR and is an introduction only to the technology.
+
+
+
+
+Presenter(s)
+Tracy Moy
+Arkansas Game and Fish Commission
+GIS Division
+2 Natural Resources Drive
+Little Rock, AR  72205
+P. (501) 223-6338
+F. (501) 223-6419
+tjmoy@agfc.state.ar.us
+
+
+
+Bill Sneed
+Geospatial Liaison for Arkansas
+U.S. Geological Survey
+401 Hardin Road
+Little Rock, AR  72211
+P. (501) 228-3665
+C. (501) 231-8601
+wsneed@usgs.gov
+http://liaisons.usgs.gov/geosptial/Arkansas/
+
+
+
+Bio(s):
+
+
+Tracy:
+Mrs. Tracy Moy is the manager of the Geographic Information Systems (GIS) section for the Arkansas Game and Fish Commission.  Mrs. Moy is a native of Central Arkansas and has been the GIS lead at the Arkansas Game and Fish Commission since 1998. 
+
+She has been responsible for the coordination and oversight of activities related to GIS and GPS at the agency.  Mrs. Moy graduated from the University of Arkansas Little Rock in 1997 with a B.S. in Environmental Science and has been working with GIS for over 15 years.  She was a recipient of the 2000 ESRI Special Achievement in GIS Award.  Mrs. Moy has served on the State Land Information Board now the GIS Board since 2004 and has been a member of the AR GIS User Forum for many years.
+
+
+	
+
+Bill:
+
+Bill Sneed has worked for the United States Geological Survey (USGS) since August, 1984. Bill's career has consisted of traveling throughout the country performing topographic map surveys. Bill has lived/worked in 45 of the 50 states, as well as Antarctica. After his Antarctica assignment, Bill spent some time in Rolla, Missouri at The Mid-Continent Mapping Center before moving to Little Rock to become the USGS Geospatial Liaison to the State of Arkansas. Bill is the Past-Chair of the Arkansas GIS Users Forum and a Past-Director to the Mid-America GIS Consortium (MAGIC). Bill still serves on the Executive Committee for both organizations. Bill lives in Perry County where he enjoys raising the old foundation quarter horses and riding his Harley Davidson motorcycle. 
+
+
+________________
+
+
+(9) Workshop:                Developing Custom GIS Tools with ArcGIS ModelBuilder
+
+
+Hands-On Computer Lab - $65 – Offered two times - Monday Afternoon & Tuesday Afternoon
+
+
+ModelBuilder is an easy-to-use, visual programming interface built into ArcGIS that allows users to create, view, and edit custom GIS models/tools. There are a number of advantages to developing reusable ArcGIS tools with ModelBuilder, including the ability to view, organize, and document entire geoprocessing workflows, to streamline repetitive processes, and to share methods with others. This half-day workshop will cover beginner to intermediate ModelBuilder topics, including creating and running a basic model, setting model parameters for tool creation, managing intermediate data, using inline variables and ‘model only’ tools, setting preconditions, as well as saving and sharing a model/tool. This workshop is recommended for those familiar with ArcMap and the ArcToolbox, but have little to no previous experience with ModelBuilder. 
+
+
+
+Presenter
+Adam Barnes
+Geomatics Specialist
+Center for Advanced Spatial Technologies (CAST)
+University of Arkansas
+Fayetteville, AR  72701
+P. (479) 575-6119
+F. (479) 575-5218
+abarnes@cast.uark.edu
+
+
+
+
+
+
+Bio:
+Adam is a native northwest Arkansan and graduate from the University of Arkansas holding a MA in Geography and has worked for the Center for Advanced Spatial Technologies (CAST) since 2005. As a research assistant at CAST, he has been involved in a variety of projects focused on GIS based analysis and model/tool development, aerial and close-range photogrammetry, and 3D scanning. He has also worked with the Center's EAST Initiative support crew since 2006, providing support and training to 2-12 grade students in the use of GIS, GPS, and 3D visualization software and techniques.
+________________
+
+
+
+(10) Workshop:        Object-Based Image Analysis with PCI's 
+                        ArcGIS Geo-Imaging Tools and eCognition
+
+
+Hands-On Computer Lab - $100 – Tuesday – Full Day
+
+
+This day-long workshop will provide an introduction to object-based image analysis (OBIA) and will focus on the concepts and techniques necessary to create workflow for producing high resolution land-cover and land-use maps from multiple sources of aerial imagery and ancillary GIS data. The first half of the morning session will introduce the key concepts of OBIA and how it differs from traditional image processing/classification techniques. The remainder of the morning session and a small portion of the afternoon session will be used to explore the image pre-processing/processing capabilities made available in  ArcGIS and the ArcGIS/PCI Geo-Imaging Toolbox. The remainder of the afternoon session will be a hands-on exploration of object-based techniques for image classification using eCognition. This workshop is recommended for those with a limited background in image analysis, but no previous work with either PCI's ArcGIS Geo-Imaging Tools or eCognition is prerequisite. 
+
+Presenter
+Bruce Gorham
+Remote Sensing Specialist
+Center for Advanced Spatial Technologies (CAST)
+University of Arkansas
+Fayetteville, AR  72701
+P. (479) 575-8454
+F. (479) 575-5218
+bruce@cast.uark.edu
+
+
+Bio:
+Bruce is a remote sensing specialist at the Center for Advanced Spatial Technologies at the University of Arkansas in Fayetteville. He has been associated with CAST for 21 years. In that time his work has focused primarily on the design and implementation of land-use mapping, change detection, and land-use and land-cover analysis projects. Through the AmericaView program, he also performs outreach activities designed to inform the public on the benefits of remote sensing.
+________________
+
+
+
+(11) Workshop:        GIS Data Collection using ArcGIS Mobile with Trimble Positions
+
+
+Hands-On Computer Lab - $100 – Tuesday – Full Day
+
+
+This hands-on workshop will center on working with ArcGIS for Windows Mobile and Trimble Positions to extend GIS beyond the office and deploy intuitive and productive mobile GIS data collection for accurate and up-to-date GIS data across an organization.  Topics will include:
+ 
+-Working with Geodatabase
+-Trimble Positions Software Suite
+-Creating Mobile Cache
+-Mobile Project Center
+-Field Session
+-Post Processing
+-Creating Profiles
+-Differential Correction
+-Validate/Edits
+
+
+Presenter
+Eric Bock
+Trimble Certified Trainer
+Navigation Electronics, Inc.
+200 Toledo Drive
+Lafayette, LA  70506
+P. (800) 949-1446
+F. (337) 237-1417
+eric_bock@neigps.com
+
+
+
+Bio:
+Eric earned his Bachelors in Geography, GIS and Remote Sensing at the University of New Orleans and currently works at the Mapping & GIS Support & Training Manager for NEI as a Trimble Certified Trainer.  His responsibilities include  expertise in software installation and maintenance, support of sales demonstrations for both Trimble and ESRI products along with the research and analysis of new hardware and software solutions.  Eric previously worked as a Geographic Assistant Support Analyst for the Louisiana Department of Natural Resources and as Physical Science Technician with the US Department of Agriculture.  Eric earned the UNO Geography Student of the year award in 2005 and is a member of the New Orleans Geographic Society.  Eric’s enjoys Kayaking, Hiking, Gardening, Carpentry, Cartography, and Technology.
+________________
+
+
+
+(12) Workshop:        Introduction to ArcGIS Server 10.1 – In Practice
+
+
+Hands-On Computer Lab - $100 – Tuesday – Full Day
+
+
+ArcGIS Server is much more than simply a map-publishing tool. Students will become conversant in theory and practice of implementing ESRI’s latest version of ArcGIS Server. Topics to be covered will include:
+ 
+·            Introduction to ArcGIS Server
+·            Installation, setup and configuration of ArcGIS Server
+·            Where/How does ArcSDE fit into the picture?
+·            Authoring, publishing and consuming dynamic and cached map services
+·            Authoring, publishing and consuming map locator services
+·            Available ArcGIS Web APIs
+·            Using ArcGIS.com to share data and quickly create web-based applications
+·            Exploring the Flex, Javascript and Silverlight samples and templates
+
+
+Presenter
+Russell Gibson
+Director, Information and Technology Systems
+City of Fort Smith, AR
+P. (479)788-8919
+rgibson@fortsmithar.gov
+www.fortsmithar.gov
+
+
+
+Bio:
+Russell Gibson is presently the IT Director and GIS Manager at the City of Fort Smith, Arkansas.  A summary of his past accomplishments and related GIS experience includes:
+
+-Former Director of an ESRI Business Partner of the Year (2007).
+-GIS Manager for a local government recipient of ESRI’s Special -Achievement in GIS (SAG) Award (2008).
+-Twenty years of department/program-level management expertise in both corporate and government organizations.
+-Past-Chair and Member, Arkansas State Land Information Board (Governor-appointed).
+-GIS Manager for first local government organization to be included in the USGS National Map Program.
+-Twenty years of experience deploying GIS and mapping technology in a variety of applications including cadastral, utilities, oil and gas, local/state/regional government, EPA, Department of Defense (DoD) and Land Information Systems.
+-Eleven years of university-level classroom teaching experience.
+-Well-versed in a host of GIS-related support technologies including relational database management systems (MS SQL-Server and Oracle), CADD (Autodesk, Bentley, Computervision), and application development (ASP.NET, Java, ActionScript, Flex, JavaScript, JSP, HTML, XML
+
+(13) Workshop:                Beginners guide to ArcGIS 10.1 (Hands-On)
+
+
+Hands-On Computer Lab - $100 – Tuesday – Full Day
+
+
+This workshop will provide an overview of key GIS concepts and terminology while providing hands-on experience with the latest version of ArcGIS desktop.  Course lecture will be enforced with hands-on exercises and instructor-led examples that will build a solid foundation for new ArcGIS users to become productive users of this awesome geospatial toolkit.  You will learn how to leverage the ArcGIS desktop software to author, share and use geographic information for everyday tasks.  Course exercises will demonstrate common methods used to find, visualize, analyze, manage and share data or resulting maps with others within your organization or around the world.  
+
+Presenter
+Brian Culpepper
+Center for Advanced Spatial Technologies (CAST)
+University of Arkansas
+Fayetteville, AR  72701
+P. (479) 575-8745
+F. (479) 575-5218
+brian@cast.uark.edu
+
+
+
+
+
+
+Bio:
+Brian has been a Certified ESRI ArcGIS Desktop instructor since 2006 and has over 20 years of experience with geospatial technologies.  This Arkansas native holds a Bachelors of Landscape Architecture and an MA degree in Geography from the University of Arkansas, Fayetteville.  He has been a geodata analyst or project team leader at the Center for Advanced Spatial Technologies (CAST) since 1992.  Brian currently resides near the geographic center of Fayetteville with his family, Cristina, Clara and their German Short-haired pointer, Skip.
+________________
+
+
+
+(14) Workshop:                LiDAR Data Processing Hands-On Workshop
+
+
+Hands-On Computer Lab - $100 – Tuesday – Full Day
+This workshop will familiarize you with the tools and techniques necessary to turn raw LAS data from aerial LiDAR into useful products, including DEMs and derivative layers. We'll start with an overview of the typical  LiDAR collection and processing workflow, giving you a solid foundation for asking questions about data quality. You  will work hands-on in both ArcGIS and Open Source environments, utilizing the LP360 extension for ArcGIS from QCoherent as well as the LAStools written by Martin Isenburg. We will  take an in-depth look at the native LAS capabilities of ArcGIS 10.1, and examine some of the alternatives for dealing with the massive data produced by aerial LiDAR. Finally, we will give an overview of spec'ing and purchasing a LiDAR acquisition. You will learn the good, the bad, and the ugly of working with high density, multi-return LiDAR data!
+Presenter(s)
+Malcolm Williamson
+Geospatial Applications and Education Manager
+Center for Advanced Spatial Technologies (CAST)
+University of Arkansas
+Fayetteville, AR  72701
+P. (479) 575-2734
+F. (479) 575-5218
+malcolm@cast.uark.edu
+
+
+
+Hayley Hames
+Center for Advanced Spatial Technologies (CAST)
+University of Arkansas
+Fayetteville, AR  72701
+P. (479) 575-3185
+F. (479) 575-5218
+hayley@cast.uark.edu
+
+
+
+Bio:
+Malcolm Williamson:
+
+Malcolm is a 20-year veteran of CAST, with extensive experience in geospatial analysis and project management. He has worked with a variety of terrestrial and aerial LiDAR data over the last several years, and has been fortunate enough to use terrestrial LiDAR scanning systems on heritage projects across four continents. For LiDAR processing, he prefers to focus on the application of less expensive commercial and open source tools. When not globe-trotting, he has the pleasure of sharing geospatial technologies with the students of the EAST program here in Arkansas.
+
+
+Hayley Hames:
+
+Hayley has spent much of the last two years trying to figure out which way water really flows in the Arkansas delta, as she leads CAST's aerial LiDAR processing efforts. The algorithms that she has developed for hydrologic flow enforcement in DEMs have caught the attention of folks at ESRI, amongst others. Hayley is also key to CAST's support of the students of the EAST program, and spends a whole lot of time running around the state, teaching our kids to optimize bus routes, map out cemeteries, and to always be on the lookout for the infamous "hate weasels"!
+________________
+
+
+
+(15) Workshop:                Introduction to GeoMedia 2013
+
+
+Hands-On Computer Lab - $65 – Tuesday Afternoon
+
+
+This four-hour course introduces GeoMedia 2013, a powerful GIS management platform that enables you to integrate and analyze your geospatial resources to present clear, actionable information. During this course, you will gain a foundational knowledge of GeoMedia terminology and concepts. You will also have the opportunity to work with attribute tables, feature styles, and the querying tools.  In addition, you will participate in guided, hands-on exercises to create databases connections and legends, learn about GeoMedia’s faster viewing capabilities, integration with ERDAS APOLLO, and advanced labeling capabilities. 
+
+
+Presenter
+Joseph R. “Joe Bob” Penor
+Staff Software Scientist
+Geospatial Operations: GIS Product Line Specialist
+Intergraph
+5051 Peachtree Corners Circle, Suite 100
+Norcross, GA 30092
+P: (770) 776-3400 x 3469
+F: (770) 776-3500
+joe.penor@intergraph.com
+
+
+
+
+
+
+Bio:
+Joseph R. “Joe Bob” Penor is a Staff Software Scientist and the GIS Product Line Specialist within Intergraph’s Security, Government & Infrastructure (SG&I) division.  Joe Bob obtained his B.S. in biology from the University of Arkansas at Little Rock, focusing on wildlife management. He performed his M.S. work at the University of Arkansas at Monticello in the School of Forest Resources with Dr. Bob Weih.  Prior to joining Intergraph, he worked as the GIS Lab Manager at the University of Arkansas at Little Rock, working on various GIS projects with the State Data Center and instructing undergraduates in geomatics (GIS/GPS/RS) technologies.  Today, Joe Bob is still active with the Arkansas GIS Users Forum as a 17-year member and past officer.  In addition, he is an active member of both ASPRS Potomac Region and the Virginia Association for Mapping and Land Information Systems (VAMLIS) in his current home state of Virginia.  
+
+
+________________
+
+
+
+(16) Workshop:                ArcGIS Online
+
+
+Hands-On Computer Lab - $65 – Tuesday Morning
+
+
+ArcGIS Online is a platform for creating and sharing GIS maps, apps, and data—providing access to critical information throughout your organization. This hands-on workshop will explore how users can build and share maps with others, and incorporate ArcGIS Online into your organization's GIS workflows. The workshop will cover:
+        - Overview of ArcGIS Online
+        - Configuring your Organization
+        - Publishing and Sharing Content
+        - Embedding maps into an Existing Web Site
+        - Best Practices for Authoring Web Maps
+        - Leveraging ESRI Maps for Office
+The goal of the workshop is to have you walk away with a configured ArcGIS Online organization and at least one useful information product that supports current business needs in your organization. 
+
+
+
+
+Presenter
+Tim Hensley
+ESRI Certified Desktop Associate
+ESRI
+3060 Little Hills Expressway
+St. Charles, MO  63301
+P. (636) 949-6620 x8532
+thensley@esri.com
+www.esri.com
+
+
+
+
+
+
+
+
+
+Bio:
+Mr. Hensley has been employed with ESRI since 1998 and works out of the Regional Office in St. Louis.  Mr. Hensley has attained the ESRI Desktop Associate certification.  Also during his tenure with ESRI, Mr. Hensley has specialized in ESRI’s web solutions, such as ArcGIS Server and ArcGIS Online.  Prior to 1998, Mr. Hensley worked with GIS for nearly twelve years in both State and County government.
+
+
+________________
+
+
+
+(17) Workshop:                Getting a Grasp on the Nebulous GIS “Cloud”
+
+
+Lecture - $50 – Tuesday Morning
+
+
+What is the cloud?  How can I get my data there?  What is the future of the web APIs in light of ArcGIS Online and ESRI’s push to the cloud?  How do I choose an API?  Is HTML5 really as awesome as everyone says it is?  Are there any alternatives to ESRI in the cloud?  This workshop is for all of those who have asked, not known to ask, or think they have definitively answered any of these questions.  Join us as we attempt to harness and bring order to the GIS Cloud. 
+
+
+
+
+Presenter
+Matt Charton
+Black Box GIS, LLC
+153 Scenic Hill Road
+Conway, AR  72034
+P. (501) 269-7681
+mattcharton@blackboxgis.com
+
+
+
+
+
+
+Bio:
+Matt Charton received his initiation into the field of GIS almost a decade ago as an intern for the Arkansas Game & Fish Commission.  Over the following years, he continued to work for the AGFC GIS Division in various capacities until the end of 2010 when he started his own contract GIS Development firm—Black Box GIS.  The high demand for GIS development work kept Matt so busy that he was more than happy when act Geospatial offered to absorb Black Box GIS and hire Matt as a Senior GIS Developer in 2013.  In his newly rediscovered off-time, Matt enjoys travelling, backpacking, gardening, reading, and spending time with Marie, his wonderful wife of 9 years.
+________________
+
+
+
+(18) Workshop:                Mobile Maps – All the Cool Kids are Doing It!
+
+
+Lecture - $50 – Tuesday Morning
+At one point in time we all have either heard, used, or thought these words.  In the “techy” environment of GIS it’s almost a necessity to be one of the cool kids “playing with the latest toy”.  If you are not, you may find yourself outside the “sandbox”.  Mobile data devices are redefining the “sandbox”.  Almost everyone is carrying around a mobile device of some sort.  Being able to utilize these devices as methods to collect and decimate information is becoming easier every day.  In this workshop we will look at some of the methods in which we can easily use these devices in the GIS arena.  So bring your Phone, Pad, or Tablet and we will spend a little time in the “GIS Sandbox”.  Besides, according to my children, it is the perfect reason to do anything. 
+
+
+
+
+Presenter
+Scott Lane
+Geographic Information Systems Analyst/IT
+Arkansas Game and Fish Commission
+771 Jordan Drive
+Monticello, AR  71655
+P: (877) 367-3559
+M: (870) 723-5699
+slane@agfc.state.ar.us 
+www.agfc.com
+
+
+
+
+
+
+Bio:
+Scott is a 1983 graduate of the University of Arkansas at Monticello with a Bachelor of Science degree in forest management.  Scott worked the next seven years as a Forest Manager for Anthony Timberlands, Inc. in Malvern, AR, managing company and private lands in Clark, Hot Spring, Saline and Dallas counties. In 1990, Scott took a position as Habitat Manager for the Arkansas Game and Fish Commission, managing 83,000 acres of wildlife management areas in Southeast Arkansas.  In 2000 a GIS assessment was made of the AGFC.  This assessment recommended that Scott become a GIS specialist for the south half of the state, bringing the science and use of GIS to “field” operations. Scott has been blessed with a great wife, 4 sons, 2 granddaughters, and a grandson.
+________________
+
+
+
+(19) Workshop:                A GIS workflow for Physical Addressing and 
+                                E9-1-1 Data Maintenance
+
+
+Hands-On Computer Lab - Free – Tuesday – Full Day
+
+
+The ACF (Arkansas Centerline File) program was started in 2002 and completed in 2010. The data supports street level geo-coding based on local road geometry. This is an adequate means of locating addresses for general purposes but not for saving lives or streamlining business processes. To remedy these and many other problems related to where people, places, and things really are, the AGIO (Arkansas Geographic Information Office) began working with addressing authorities to produce a statewide physical address point feature layer, beginning in 2009.
+
+
+To support this effort, AGIO provides training to local government agencies in the development and maintenance of these data. Class materials and discussion provides an overview of address uses and users, explains why address point features are becoming the most important framework layer, and provides hands-on exercises in road, address, and ESN boundary editing, using ArcGIS V10.1
+
+
+The workshop will benefit all individuals and organizations who work with physical address information or wish to learn about how GIS is used to improve local government services, especially related to E9-1-1.
+
+
+Presenter
+Adrian 'Butch' Clark
+Sr. GIS Analyst (Framework Data Integrator) 
+Arkansas Geographic Information Office - Putting Arkansas on the Map
+1 Capitol Mall
+2nd Floor 2B 900
+Little Rock, AR 72201
+P. (501) 682-2943
+F. (501) 682-6077
+M. (501) 412-7360
+butch.clark@arkansas.gov 
+http://www.gis.arkansas.gov
+
+
+
+Bio:
+
+Adrian Clark is a Sr. GIS Analyst and Framework Data Coordinator at the Arkansas Geographic Information Office. He has been with AGIO for 6 years and is primarily responsible for coordinating GIS activities at the local government level. He has over 29 years of diverse experience in geospatial technology. Adrian holds a BS degree from the University of Texas (Tyler) and has held professional certifications from the National Emergency Number Association (NENA) and GIS Certification Institute.
+________________
+(20) Workshop:                Storm Spotter Training 2013
+
+
+Lecture - Free – Tuesday Night (2 Hours)
+
+
+Throughout eastern Oklahoma and northwestern Arkansas, trained and dedicated individuals monitor the skies around their communities during severe weather events. These storm spotters provide first-hand severe weather reports to their local officials and to the National Weather Service, which are used to make critical warning decisions.
+
+
+Being a storm spotter not only means dedication but also training. Each winter and spring the Tulsa office of the National Weather Service trains members of police & fire departments, emergency management officials and amateur radio operators on spotting techniques. Typically, the training is coordinated by a local group (such as an emergency management agency) and a NWS meteorologist serves as the guest instructor. The goal of the training is not just to recognize tornadoes but to have some understanding of storm structure, which in turn better prepares the spotter for the extreme and unusual circumstances. Other topics covered include an update on the latest NWS technology and procedures, ideas for organizing / coordinating spotter groups, and important safety considerations.
+
+
+The training is free and requires no preregistration. 
+
+
+Presenter
+Ed Calianese
+Warning Coordination Meteorologist
+Tulsa Office of National Weather Service
+10159 East 11th Street, Suite 300
+Tulsa, OK 74128
+P. (918) 838-7838
+ed.calianese@noaa.gov
+
+
+
+
+
+
+Bio:
+Ed Calianese is the Warning Coordination Meteorologist (WCM) with the NWS Tulsa Forecast Office. He has served in that position since October 2004. Ed’s career with the NWS began in 1991 as a Meteorologist Intern at the Weather Service Office in Asheville, North Carolina. In 1994, he was promoted to a Journeyman Forecaster at the NWS Office in Fort Worth, Texas. He became a Lead Forecaster at the NWS Office in Lubbock, Texas in 1998 and served as the WCM there beginning in 2001. Ed earned a BS in Meteorology from the State University of New York in 1990 and an MBA in Management from Texas Tech University in 2001. Ed lives in Owasso, Oklahoma with his wife Michele and son Bryan.

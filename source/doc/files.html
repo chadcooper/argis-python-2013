@@ -29,8 +29,8 @@
     <script type="text/javascript" src="_static/jquery.cookie.js"></script>
     <script type="text/javascript" src="_static/cloud.js"></script>
     <link rel="top" title="Intermediate geoprocessing with Python, AR GIS Users Forum 2013 1.0 documentation" href="index.html" />
-    <link rel="next" title="Exploiting the interwebz" href="web.html" />
-    <link rel="prev" title="What we will accomplish" href="what-we-are-doing.html" /> 
+    <link rel="next" title="Working with objects" href="objects.html" />
+    <link rel="prev" title="Exploiting the interwebz" href="web.html" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
@@ -43,10 +43,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="web.html" title="Exploiting the interwebz"
+          <a href="objects.html" title="Working with objects"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="what-we-are-doing.html" title="What we will accomplish"
+          <a href="web.html" title="Exploiting the interwebz"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="index.html">Intermediate geoprocessing with Python, AR GIS Users Forum 2013 1.0 documentation</a> &raquo;</li>
  
@@ -62,6 +62,86 @@
             
   <div class="section" id="working-with-files">
 <h1>Working with files<a class="headerlink" href="#working-with-files" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="scraping-a-file-for-email-addresses">
+<h2>Scraping a file for email addresses<a class="headerlink" href="#scraping-a-file-for-email-addresses" title="Permalink to this headline">¶</a></h2>
+<p>I&#8217;m lazy. It&#8217;s true, I admit it. So when someone sends a file with a bunch of
+email addresses in it that I need to get out, I turn to Python. Sure, you can
+copy and paste, but so can my 6th grader. I&#8217;d rather invest that copy/paste
+time into something a little bit more interesting.</p>
+<ol class="arabic">
+<li><p class="first">Open up the file <tt class="docutils literal"><span class="pre">/inputs/workshops.docx.txt</span></tt> in Notepad. Scoll around
+til you see some of the email addresses that are scattered about in the
+document. This was a Word document, I opened it in Google Drive, then saved it
+out to text, which took about 15 seconds.</p>
+</li>
+<li><p class="first">Open up a Command Prompt: Start &gt; Search box &gt; type <tt class="docutils literal"><span class="pre">cmd</span></tt></p>
+</li>
+<li><p class="first">Change directories (&#8220;cd&#8221;) to the <tt class="docutils literal"><span class="pre">inputs</span></tt> directory.</p>
+</li>
+<li><p class="first">Fire up the Python interpreter</p>
+</li>
+<li><p class="first">Use the <tt class="docutils literal"><span class="pre">re</span></tt> module in the Python standard library, so type:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">re</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Now we need to build up the pattern, the regular expression, to find any
+email addresses in the text string:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">email_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">&quot;[-a-zA-Z0-9._]+@[-a-zA-Z0-9_]+.[a-zA-Z0-9_.]+&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Open up the text file and read it all into memory:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">all_text</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&quot;workshops.docx.txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Execute the pattern search on the in-memory text of the file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">emails</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">email_pattern</span><span class="p">,</span> <span class="n">all_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Print out the emails and the count of how many were found:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">emails</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">emails</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="section" id="writing-the-email-addresses-out-to-a-text-file">
+<h3>Writing the email addresses out to a text file<a class="headerlink" href="#writing-the-email-addresses-out-to-a-text-file" title="Permalink to this headline">¶</a></h3>
+<p>We have the email addresses out of the file and into a list object. We can
+copy/paste that list, but they are strings and have those damned pesky single
+quotes around them. Gmail might not dig that. Let&#8217;s write them out to a file so
+we can have em for later if we need em:</p>
+<ol class="arabic">
+<li><p class="first">Open up a writable object, a text file in our <tt class="docutils literal"><span class="pre">outputs</span></tt> directory:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&quot;outputs/scraped_emails.txt&quot;</span><span class="p">,</span> <span class="s">&quot;w&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">What type of objects are we dealing with?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">all_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Iterate through the list of email addresses, write each one out to file,
+separated by a comma and a space:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">email</span> <span class="ow">in</span> <span class="n">emails</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">email</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span><span class="p">)</span>
+<span class="gp">...</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Close the text file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
 </div>
 
 
@@ -73,8 +153,14 @@
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="what-we-are-doing.html">What we will accomplish</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Working with files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web.html">Exploiting the interwebz</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Working with files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#scraping-a-file-for-email-addresses">Scraping a file for email addresses</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#writing-the-email-addresses-out-to-a-text-file">Writing the email addresses out to a text file</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="objects.html">Working with objects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geometries.html">Working with geometries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="spatial-refs.html">Working with spatial references</a></li>
@@ -87,11 +173,11 @@
            rel="nofollow">Show Source</a></li>
   </ul>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="what-we-are-doing.html"
-                        title="previous chapter">What we will accomplish</a></p>
-  <h4>Next topic</h4>
   <p class="topless"><a href="web.html"
-                        title="next chapter">Exploiting the interwebz</a></p>
+                        title="previous chapter">Exploiting the interwebz</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="objects.html"
+                        title="next chapter">Working with objects</a></p>
         </div>
       </div>
       <div class="clearer"></div>
@@ -105,10 +191,10 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="web.html" title="Exploiting the interwebz"
+          <a href="objects.html" title="Working with objects"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="what-we-are-doing.html" title="What we will accomplish"
+          <a href="web.html" title="Exploiting the interwebz"
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="index.html">Intermediate geoprocessing with Python, AR GIS Users Forum 2013 1.0 documentation</a> &raquo;</li>
  
@@ -118,7 +204,7 @@
 
     <div class="footer">
         &copy; Copyright 2013, Center for Advanced Spatial Technologies.
-      Last updated on Aug 05, 2013.
+      Last updated on Sep 04, 2013.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
     </div>
     <!-- cloud_sptheme 1.4 -->

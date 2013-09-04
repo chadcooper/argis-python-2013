@@ -9,6 +9,9 @@ Things to cover
 
 In no particular order right now:
 
+* Version control
+- install git on laptops, something with a GUI so they can see diffs visually?
+
 * Python Toolboxes
 * Working with geometries - reading/writing
 * Working with cursors

@@ -4,14 +4,12 @@ What we will accomplish
 * Fetch files from web
 
   * CSV - NBI bridge data
-  * json/geojson - something from github
   * raster data
   * scrape some data
   
 * Parse said files
 
   * ``csv`` module
-  * ``json`` module
   * ``arcpy`` methods
   
 * Data to fgdb table
@@ -25,7 +23,15 @@ What we will accomplish
 
 * Code into Python Toolbox
 
+* Python Add-In
+
+  * http://resources.arcgis.com/en/help/main/10.1/index.html#//014p00000025000000
+
 * Error handling and logging
+
+* Scheduling tasks in Windows Task Scheduler
+
+  * https://www.e-education.psu.edu/geog485/node/143
 
 
 

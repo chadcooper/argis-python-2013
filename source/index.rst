@@ -29,12 +29,14 @@ Things you should know already:
 
 Curriculum:
 
+For this workshop we will start from scratch, first
+
 .. toctree::
    :maxdepth: 3
    
    what-we-are-doing.rst
-   files.rst
    web.rst
+   files.rst
    objects.rst
    geometries.rst
    spatial-refs.rst
