@@ -30,7 +30,7 @@
     <script type="text/javascript" src="_static/cloud.js"></script>
     <link rel="top" title="Intermediate geoprocessing with Python, AR GIS Users Forum 2013 1.0 documentation" href="index.html" />
     <link rel="next" title="Working with files" href="files.html" />
-    <link rel="prev" title="What we will accomplish" href="what-we-are-doing.html" /> 
+    <link rel="prev" title="Writing code and running scripts" href="writing-running.html" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
@@ -46,7 +46,7 @@
           <a href="files.html" title="Working with files"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="what-we-are-doing.html" title="What we will accomplish"
+          <a href="writing-running.html" title="Writing code and running scripts"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="index.html">Intermediate geoprocessing with Python, AR GIS Users Forum 2013 1.0 documentation</a> &raquo;</li>
  
@@ -62,65 +62,210 @@
             
   <div class="section" id="exploiting-the-interwebz">
 <h1>Exploiting the interwebz<a class="headerlink" href="#exploiting-the-interwebz" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-python-docs">
+<h2>The Python docs<a class="headerlink" href="#the-python-docs" title="Permalink to this headline">¶</a></h2>
+<p>Before we go any further, let&#8217;s take a look at the Python docs for the version
+of Python ArcGIS 10.1 uses, 2.7.2:</p>
+<p><a class="reference external" href="http://docs.python.org/release/2.7.2/">http://docs.python.org/release/2.7.2/</a></p>
+<p>Let&#8217;s look at the <tt class="docutils literal"><span class="pre">os</span></tt> and <tt class="docutils literal"><span class="pre">urllib</span></tt> modules, which we will be using in this
+section.</p>
+</div>
 <div class="section" id="doing-a-simple-file-fetch-from-the-web">
 <h2>Doing a simple file fetch from the web<a class="headerlink" href="#doing-a-simple-file-fetch-from-the-web" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="s">&quot;http://www.fhwa.dot.gov/bridge/nbi/2012/delimited/DC12.txt&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="s">&quot;/Users/chad/Projects/Testing/ar.csv&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="s">r&quot;C:\Users\class5user\ar-gis-python\outputs\dc.csv&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">urllib</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="html-toggle section" id="scraping-the-web-for-data">
-<h2>Scraping the web for data<a class="headerlink" href="#scraping-the-web-for-data" title="Permalink to this headline">¶</a></h2>
-<p>Sometimes data is available, but not in a form that is easy to get at. Take the
-<a class="reference external" href="http://www.phillypal.com/pal_locations.php">PhillyPals</a> website for example - a table of addressed locations with some
-additional information.</p>
-<div class="section" id="hint">
-<h3>Hint<a class="headerlink" href="#hint" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21</pre></div></td><td class="code"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">BeautifulSoup</span> <span class="kn">as</span> <span class="nn">bs</span>
-<span class="kn">import</span> <span class="nn">urllib2</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s">&quot;http://www.phillypal.com/pal_locations.php&quot;</span>
-
-<span class="c"># Open the URL</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="c"># Slurp all the HTML code into memory</span>
-<span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="c"># Feed it into BS parser</span>
-<span class="n">soup</span> <span class="o">=</span> <span class="n">bs</span><span class="o">.</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
-<span class="c"># Find all the table cells whose width=37%</span>
-<span class="n">addresses</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&quot;td&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s">&quot;width&quot;</span><span class="p">:</span><span class="s">&quot;37%&quot;</span><span class="p">})</span>
-
-<span class="k">print</span> <span class="nb">len</span><span class="p">(</span><span class="n">addresses</span><span class="p">)</span>
-
-<span class="k">print</span> <span class="n">addresses</span>
-
-<span class="k">for</span> <span class="n">address</span> <span class="ow">in</span> <span class="n">addresses</span><span class="p">:</span>
-    <span class="c"># Print out just the text</span>
-    <span class="k">print</span> <span class="n">address</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="section" id="fetching-a-bunch-of-files-from-a-known-url-structure">
+<h2>Fetching a bunch of files from a known URL structure<a class="headerlink" href="#fetching-a-bunch-of-files-from-a-known-url-structure" title="Permalink to this headline">¶</a></h2>
+<p>If files are sitting out on a server somewhere in a fairly rigid folder
+structure, it&#8217;s relatively easy to fetch those files. The <a class="reference external" href="http://libremap.org/">Libre Map Project</a>
+hosts the 24K USGS DRGs for all 50 states for FREE on archive.org. We are
+interested in the <a class="reference external" href="http://libremap.org/data/state/arkansas/drg/">Arkansas DRGs</a>.</p>
+<p>On the Arkansas data page, hover over some of the links for the TIFF, TFW, and
+FGD files. See a pattern there?</p>
+<p><tt class="docutils literal"><span class="pre">http://www.archive.org/download/usgs_drg_</span></tt> <tt class="docutils literal"><span class="pre">ar</span></tt> _ <tt class="docutils literal"><span class="pre">35</span></tt> <tt class="docutils literal"><span class="pre">094</span></tt> _ <tt class="docutils literal"><span class="pre">a2</span></tt> /
+<tt class="docutils literal"><span class="pre">o</span></tt> <tt class="docutils literal"><span class="pre">35094</span></tt> <tt class="docutils literal"><span class="pre">a2</span></tt> <tt class="docutils literal"><span class="pre">.tif</span></tt></p>
+<p>This breaks down to:</p>
+<p><tt class="docutils literal"><span class="pre">base_url</span></tt> <tt class="docutils literal"><span class="pre">state</span></tt> _ <tt class="docutils literal"><span class="pre">deg</span> <span class="pre">lat</span></tt> <tt class="docutils literal"><span class="pre">deg</span> <span class="pre">lon</span></tt> _ <tt class="docutils literal"><span class="pre">map</span>
+<span class="pre">index</span> <span class="pre">no</span></tt> / <tt class="docutils literal"><span class="pre">category</span></tt> <tt class="docutils literal"><span class="pre">deg</span> <span class="pre">lat</span></tt> <tt class="docutils literal"><span class="pre">deg</span> <span class="pre">lon</span></tt> <tt class="docutils literal"><span class="pre">map</span> <span class="pre">index</span> <span class="pre">no</span></tt> <tt class="docutils literal"><span class="pre">.file</span> <span class="pre">ext</span></tt></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This USGS standard explains the above nicely:
+<a class="reference external" href="http://topomaps.usgs.gov/drg/drg_name.html">http://topomaps.usgs.gov/drg/drg_name.html</a></p>
+</div>
+<p>This quad information is available in the attributes of the 24K USGS quadrangle
+footprint that is readily available on the web. I got mine from the <a class="reference external" href="http://datagateway.nrcs.usda.gov/GDGOrder.aspx">USDA NRCS
+Data Gateway</a>. Order by State | Arkansas | Map Indexes | Quadrangle Index
+1:24,000. You have this in the <tt class="docutils literal"><span class="pre">shapefiles</span></tt> directory as <tt class="docutils literal"><span class="pre">quads24k_a_ar.shp</span></tt>.
+Load it into ArcMap and look at the attribute table.</p>
+<a class="reference internal image-reference" href="_images/24k-att-table.png"><img alt="_images/24k-att-table.png" src="_images/24k-att-table.png" style="width: 500px;" /></a>
+<p>Now open up 24K_Quads.xlsx from the <tt class="docutils literal"><span class="pre">inputs</span></tt> directory, in Excel. Let&#8217;s build
+our formula to in turn create our list of drgs to fetch.</p>
+<div class="html-toggle section" id="solution">
+<h3>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h3>
+<p>Look in Cell B16</p>
+</div>
+<div class="section" id="write-the-script-to-fetch-drgs">
+<h3>Write the script to fetch DRGs<a class="headerlink" href="#write-the-script-to-fetch-drgs" title="Permalink to this headline">¶</a></h3>
+<p>Import modules we will use:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">import</span> <span class="nn">os</span>
 </pre></div>
-</td></tr></table></div>
+</div>
+<p>Paste in your DRG list:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">drg_list</span> <span class="o">=</span> <span class="p">[[</span><span class="s">&#39;o36094a2&#39;</span><span class="p">,</span> <span class="s">&#39;Fayetteville&#39;</span><span class="p">,</span> <span class="s">&#39;AR&#39;</span><span class="p">],</span>
+            <span class="p">[</span><span class="s">&#39;o36094b1&#39;</span><span class="p">,</span> <span class="s">&#39;Sonora&#39;</span><span class="p">,</span> <span class="s">&#39;AR&#39;</span><span class="p">],</span>
+            <span class="p">[</span><span class="s">&#39;o36094a1&#39;</span><span class="p">,</span> <span class="s">&#39;Elkins&#39;</span><span class="p">,</span> <span class="s">&#39;AR&#39;</span><span class="p">],</span>
+            <span class="p">[</span><span class="s">&#39;o36094b2&#39;</span><span class="p">,</span> <span class="s">&#39;Springdale&#39;</span><span class="p">,</span> <span class="s">&#39;AR&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>Create a list of extensions, these are the 3 filetypes we will fetch for each
+quad:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">exts</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;tif&#39;</span><span class="p">,</span> <span class="s">&#39;tfw&#39;</span><span class="p">,</span> <span class="s">&#39;fgd&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Setup the <tt class="docutils literal"><span class="pre">base_url</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">base_url</span><span class="o">=</span> <span class="s">&quot;http://www.archive.org/download/usgs_drg_&quot;</span>
+</pre></div>
+</div>
+<p>Start a <tt class="docutils literal"><span class="pre">for</span></tt> loop to iterate through each nested list (each DRG) in
+<tt class="docutils literal"><span class="pre">drg_list</span></tt>:</p>
+<div class="highlight-python"><pre>for drg in drg_list:
+</pre>
+</div>
+<p>Start <em>another</em> <tt class="docutils literal"><span class="pre">for</span></tt> loop <em>nested in the previous loop</em> to get all 3
+filetypes for each DRG (<strong>note it is indented 4 spaces!</strong>):</p>
+<div class="highlight-python"><pre>    for ext in exts:
+</pre>
+</div>
+<p>Let&#8217;s play around with <tt class="docutils literal"><span class="pre">drg_list</span></tt> before we move on. Copy <tt class="docutils literal"><span class="pre">drg_list</span></tt>
+above and paste it into the ArcGIS Python window.</p>
+<p>Type the following commands to get a feel for how lists and slicing work:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">drg</span> <span class="ow">in</span> <span class="n">drg_list</span><span class="p">:</span>
+<span class="go">        print drg</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">drg</span> <span class="ow">in</span> <span class="n">drg_list</span><span class="p">:</span>
+<span class="go">        print type(drg)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">drg</span> <span class="ow">in</span> <span class="n">drg_list</span><span class="p">:</span>
+<span class="go">        for each in drg:</span>
+<span class="go">            print each</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">drg_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">drg_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">drg_list</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">drg_list</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">6</span><span class="p">:]</span>
+</pre></div>
+</div>
+<p>Now let&#8217;s build on list indexing and slicing and construct our url for
+fetching the data we want (<strong>note that this and all following lines are
+indented 8 spaces!</strong>). This takes parts of the quad info and builds the url
+for each DRG on the fly:</p>
+<div class="highlight-python"><div class="highlight"><pre>        <span class="n">full_url</span> <span class="o">=</span> <span class="p">(</span><span class="n">base_url</span> <span class="o">+</span> <span class="n">drg</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">+</span> <span class="s">&#39;_&#39;</span> <span class="o">+</span> <span class="n">drg</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span> <span class="o">+</span>
+                    <span class="s">&#39;_&#39;</span> <span class="o">+</span> <span class="n">drg</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">6</span><span class="p">:]</span> <span class="o">+</span> <span class="s">&quot;/&quot;</span> <span class="o">+</span> <span class="n">drg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#39;.&#39;</span> <span class="o">+</span> <span class="n">ext</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We need to have a local file and file path to store the fetched file in.</p>
+<div class="highlight-python"><div class="highlight"><pre>        <span class="n">local_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">__file__</span><span class="p">))[</span><span class="mi">0</span><span class="p">]),</span>
+                                  <span class="s">&quot;outputs&quot;</span><span class="p">,</span> <span class="n">drg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#39;.&#39;</span> <span class="o">+</span> <span class="n">ext</span><span class="p">)</span>
+        <span class="k">print</span> <span class="n">local_file</span>
+</pre></div>
+</div>
+<p>Call <tt class="docutils literal"><span class="pre">urllib.urlretrieve</span></tt> method and fetch the file:</p>
+<div class="highlight-python"><div class="highlight"><pre>        <span class="n">urllib</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">full_url</span><span class="p">,</span> <span class="n">local_file</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="os-path-goodness">
+<h4><tt class="docutils literal"><span class="pre">os.path</span></tt> goodness<a class="headerlink" href="#os-path-goodness" title="Permalink to this headline">¶</a></h4>
+<p>Let&#8217;s figure out what all the <tt class="docutils literal"><span class="pre">os.whatever</span></tt> stuff was in the script we just
+wrote by deconstructing it.</p>
+<p>In Windows Explorer, navigate to the <tt class="docutils literal"><span class="pre">source\code</span></tt> directory. Create a new file
+there call <tt class="docutils literal"><span class="pre">os-stuff.py</span></tt>. Right-click on the file and select &#8220;Edit in IDLE&#8221;.</p>
+<p>Enter the following in <tt class="docutils literal"><span class="pre">os-stuff.py</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">os</span>
+<span class="k">print</span> <span class="s">&quot;os.path.abspath:&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Save the file. Leave it open in IDLE. Open up a Windows command prompt it you
+don&#8217;t have one open already. Navigate to the <tt class="docutils literal"><span class="pre">source\code</span></tt> directory and enter:</p>
+<div class="highlight-bash"><div class="highlight"><pre>C:<span class="se">\U</span>sers<span class="se">\c</span>lass5user<span class="se">\a</span>rgis-python-2013<span class="se">\s</span>ource<span class="se">\c</span>ode&gt;python os-stuff.py
+</pre></div>
+</div>
+<p>On line 3, enter:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;os.path.split:&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">__file__</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Save and run again.</p>
+<p>One line 4, enter:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;os.path.split[0]:&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">__file__</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Save and run again.</p>
+<p>On line 5, enter:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;os.path.dirname:&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">__file__</span><span class="p">))[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Save and run again.</p>
+<p>One line 6-7 enter:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;os.path.join:&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">__file__</span><span class="p">))[</span><span class="mi">0</span><span class="p">]),</span>
+                                                    <span class="s">&quot;outputs&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Save and run for the last time.</p>
+</div>
+</div>
+<div class="html-toggle section" id="id1">
+<h3>Solution<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">drg_list</span> <span class="o">=</span> <span class="p">[[</span><span class="s">&#39;o36094a2&#39;</span><span class="p">,</span> <span class="s">&#39;Fayetteville&#39;</span><span class="p">,</span> <span class="s">&#39;AR&#39;</span><span class="p">],</span>
+            <span class="p">[</span><span class="s">&#39;o36094b1&#39;</span><span class="p">,</span> <span class="s">&#39;Sonora&#39;</span><span class="p">,</span> <span class="s">&#39;AR&#39;</span><span class="p">],</span>
+            <span class="p">[</span><span class="s">&#39;o36094a1&#39;</span><span class="p">,</span> <span class="s">&#39;Elkins&#39;</span><span class="p">,</span> <span class="s">&#39;AR&#39;</span><span class="p">],</span>
+            <span class="p">[</span><span class="s">&#39;o36094b2&#39;</span><span class="p">,</span> <span class="s">&#39;Springdale&#39;</span><span class="p">,</span> <span class="s">&#39;AR&#39;</span><span class="p">]]</span>
+             
+<span class="n">exts</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;tif&#39;</span><span class="p">,</span> <span class="s">&#39;tfw&#39;</span><span class="p">,</span> <span class="s">&#39;fgd&#39;</span><span class="p">]</span>
+<span class="n">base_url</span><span class="o">=</span> <span class="s">&quot;http://www.archive.org/download/usgs_drg_&quot;</span>
+
+<span class="k">for</span> <span class="n">drg</span> <span class="ow">in</span> <span class="n">drg_list</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">ext</span> <span class="ow">in</span> <span class="n">exts</span><span class="p">:</span>
+        <span class="c"># http://www.archive.org/download/usgs_drg_ar_35094_d2/o35094d2.tif</span>
+        <span class="n">full_url</span> <span class="o">=</span> <span class="p">(</span><span class="n">base_url</span> <span class="o">+</span> <span class="n">drg</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">+</span> <span class="s">&#39;_&#39;</span> <span class="o">+</span> <span class="n">drg</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span> <span class="o">+</span>
+                    <span class="s">&#39;_&#39;</span> <span class="o">+</span> <span class="n">drg</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">6</span><span class="p">:]</span> <span class="o">+</span> <span class="s">&quot;/&quot;</span> <span class="o">+</span> <span class="n">drg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#39;.&#39;</span> <span class="o">+</span> <span class="n">ext</span><span class="p">)</span>
+        <span class="n">local_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">__file__</span><span class="p">))[</span><span class="mi">0</span><span class="p">]),</span>
+                                  <span class="s">&quot;outputs&quot;</span><span class="p">,</span> <span class="n">drg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#39;.&#39;</span> <span class="o">+</span> <span class="n">ext</span><span class="p">)</span>
+        <span class="k">print</span> <span class="n">local_file</span>
+        <span class="n">urllib</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">full_url</span><span class="p">,</span> <span class="n">local_file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="bonus">
+<h2>Bonus<a class="headerlink" href="#bonus" title="Permalink to this headline">¶</a></h2>
+<p>Apply the principles of lists, iteration, and building of a url pattern we just
+learned to the first example of the NBI bridge data. Is there a way to fetch
+multiple states by using a list somehow?</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Use small states like RI, DE, and the District of Columbia, that way the
+files you fetch are smaller.</p>
+</div>
+<div class="html-toggle section" id="id2">
+<h3>Solution<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">base_url</span> <span class="o">=</span> <span class="s">&quot;http://www.fhwa.dot.gov/bridge/nbi/2012/delimited/&quot;</span>
+<span class="n">states</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;RI&quot;</span><span class="p">,</span> <span class="s">&quot;DE&quot;</span><span class="p">,</span> <span class="s">&quot;DC&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">states</span><span class="p">:</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="n">state</span> <span class="o">+</span> <span class="s">&quot;12.txt&quot;</span>
+    <span class="n">local_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">__file__</span><span class="p">))[</span><span class="mi">0</span><span class="p">]),</span>
+                                  <span class="s">&quot;outputs&quot;</span><span class="p">,</span> <span class="n">state</span> <span class="o">+</span> <span class="s">&quot;12.txt&quot;</span><span class="p">)</span>
+    <span class="n">urllib</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">local_file</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -134,10 +279,18 @@ additional information.</p>
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="what-we-are-doing.html">What we will accomplish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing-running.html">Writing code and running scripts</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Exploiting the interwebz</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-python-docs">The Python docs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#doing-a-simple-file-fetch-from-the-web">Doing a simple file fetch from the web</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#scraping-the-web-for-data">Scraping the web for data</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#hint">Hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fetching-a-bunch-of-files-from-a-known-url-structure">Fetching a bunch of files from a known URL structure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#solution">Solution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#write-the-script-to-fetch-drgs">Write the script to fetch DRGs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Solution</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#bonus">Bonus</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Solution</a></li>
 </ul>
 </li>
 </ul>
@@ -155,8 +308,8 @@ additional information.</p>
            rel="nofollow">Show Source</a></li>
   </ul>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="what-we-are-doing.html"
-                        title="previous chapter">What we will accomplish</a></p>
+  <p class="topless"><a href="writing-running.html"
+                        title="previous chapter">Writing code and running scripts</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="files.html"
                         title="next chapter">Working with files</a></p>
@@ -176,7 +329,7 @@ additional information.</p>
           <a href="files.html" title="Working with files"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="what-we-are-doing.html" title="What we will accomplish"
+          <a href="writing-running.html" title="Writing code and running scripts"
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="index.html">Intermediate geoprocessing with Python, AR GIS Users Forum 2013 1.0 documentation</a> &raquo;</li>
  
@@ -186,7 +339,7 @@ additional information.</p>
 
     <div class="footer">
         &copy; Copyright 2013, Center for Advanced Spatial Technologies.
-      Last updated on Sep 04, 2013.
+      Last updated on Sep 06, 2013.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
     </div>
     <!-- cloud_sptheme 1.4 -->

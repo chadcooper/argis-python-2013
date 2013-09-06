@@ -35,6 +35,7 @@ For this workshop we will start from scratch, first
    :maxdepth: 3
    
    what-we-are-doing.rst
+   writing-running.rst
    web.rst
    files.rst
    objects.rst

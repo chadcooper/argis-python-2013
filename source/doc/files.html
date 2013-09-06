@@ -66,8 +66,8 @@
 <h2>Scraping a file for email addresses<a class="headerlink" href="#scraping-a-file-for-email-addresses" title="Permalink to this headline">¶</a></h2>
 <p>I&#8217;m lazy. It&#8217;s true, I admit it. So when someone sends a file with a bunch of
 email addresses in it that I need to get out, I turn to Python. Sure, you can
-copy and paste, but so can my 6th grader. I&#8217;d rather invest that copy/paste
-time into something a little bit more interesting.</p>
+copy and paste, but so can my 6th grader. I&#8217;d rather invest that few minutes of
+copy/paste time in something a bit more interesting.</p>
 <ol class="arabic">
 <li><p class="first">Open up the file <tt class="docutils literal"><span class="pre">/inputs/workshops.docx.txt</span></tt> in Notepad. Scoll around
 til you see some of the email addresses that are scattered about in the
@@ -141,6 +141,105 @@ separated by a comma and a space:</p>
 </li>
 </ol>
 </div>
+<div class="html-toggle section" id="solution-scrape-email-addresses-py">
+<h3>Solution - scrape-email-addresses.py<a class="headerlink" href="#solution-scrape-email-addresses-py" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">re</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">email_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">&quot;[-a-zA-Z0-9._]+@[-a-zA-Z0-9_]+.[a-zA-Z0-9_.]+&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">all_text</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&quot;workshops.docx.txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emails</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">email_pattern</span><span class="p">,</span> <span class="n">all_text</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emails</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">emails</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&quot;outputs/scraped_emails.txt&quot;</span><span class="p">,</span> <span class="s">&quot;w&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">all_text</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">email</span> <span class="ow">in</span> <span class="n">emails</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">email</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="parsing-a-text-file">
+<h2>Parsing a text file<a class="headerlink" href="#parsing-a-text-file" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s look at the text file of DC bridge data we fetched from the NBI web page.
+Open up the file in Notepad and take a look at the data, it&#8217;s a hot mess.</p>
+<p>In your <tt class="docutils literal"><span class="pre">code</span></tt> directory, create a file called <tt class="docutils literal"><span class="pre">parse-csv.py</span></tt> and open it in
+IDLE.</p>
+<ol class="arabic">
+<li><p class="first">First off, open up the file with the built-in <tt class="docutils literal"><span class="pre">open</span></tt> method:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">input_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">r&quot;C:\Users\class5user\ar-gis-python\outputs\dc.csv&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Read the first line into memory, put it into a list:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">header</span> <span class="o">=</span> <span class="n">input_file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">value_list</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Use the <tt class="docutils literal"><span class="pre">index()</span></tt> list method to get the positions of the lat/lon bits</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">lat_index</span> <span class="o">=</span> <span class="n">value_list</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">&quot;LAT_016&quot;</span><span class="p">)</span>
+<span class="n">lon_index</span> <span class="o">=</span> <span class="n">value_list</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">&quot;LONG_017&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Read all remaining lines of the file into memory, iterate through them, pull
+out the lat/lons, append them to the main <tt class="docutils literal"><span class="pre">coords</span></tt> list:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">coords</span> <span class="o">=</span> <span class="p">[]</span>
+ 
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">input_file</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+    <span class="n">segmented_line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">)</span>
+    <span class="n">coords</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">segmented_line</span><span class="p">[</span><span class="n">lon_index</span><span class="p">],</span> <span class="n">segmented_line</span><span class="p">[</span><span class="n">lat_index</span><span class="p">]])</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Print out each coord pair:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">coord_pair</span> <span class="ow">in</span> <span class="n">coords</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">coord_pair</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Run you code in IDLE by going to Run | Run module. You should get something
+like so:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="s">&#39;077065400&#39;</span><span class="p">,</span> <span class="s">&#39;38554800&#39;</span><span class="p">]</span>
+<span class="p">[</span><span class="s">&#39;770380000&#39;</span><span class="p">,</span> <span class="s">&#39;38541800&#39;</span><span class="p">]</span>
+<span class="p">[</span><span class="s">&#39;021570000&#39;</span><span class="p">,</span> <span class="s">&#39;64100000&#39;</span><span class="p">]</span>
+<span class="p">[</span><span class="s">&#39;021570000&#39;</span><span class="p">,</span> <span class="s">&#39;64100000&#39;</span><span class="p">]</span>
+<span class="p">[</span><span class="s">&#39;021570000&#39;</span><span class="p">,</span> <span class="s">&#39;64100000&#39;</span><span class="p">]</span>
+<span class="p">[</span><span class="s">&#39;021570000&#39;</span><span class="p">,</span> <span class="s">&#39;64100000&#39;</span><span class="p">]</span>
+<span class="p">[</span><span class="s">&#39;077041200&#39;</span><span class="p">,</span> <span class="s">&#39;38540600&#39;</span><span class="p">]</span>
+<span class="p">[</span><span class="s">&#39;077041200&#39;</span><span class="p">,</span> <span class="s">&#39;38541200&#39;</span><span class="p">]</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="html-toggle section" id="solution">
+<h3>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Reads a NBI bridge data text file and writes the lat and long values</span>
+<span class="c">#  to a list of coordinates</span>
+<span class="n">input_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">r&quot;C:\Users\class5user\ar-gis-python\outputs\dc.csv&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">)</span>
+ 
+<span class="c"># Figure out position of lat and long in the header</span>
+<span class="n">header</span> <span class="o">=</span> <span class="n">input_file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">value_list</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">)</span>
+ 
+<span class="n">lat_index</span> <span class="o">=</span> <span class="n">value_list</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">&quot;LAT_016&quot;</span><span class="p">)</span>
+<span class="n">lon_index</span> <span class="o">=</span> <span class="n">value_list</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">&quot;LONG_017&quot;</span><span class="p">)</span>
+ 
+<span class="c"># Read lines in the file and append to coordinate list</span>
+<span class="n">coords</span> <span class="o">=</span> <span class="p">[]</span>
+ 
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">input_file</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+    <span class="n">segmented_line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">)</span>
+    <span class="n">coords</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">segmented_line</span><span class="p">[</span><span class="n">lon_index</span><span class="p">],</span> <span class="n">segmented_line</span><span class="p">[</span><span class="n">lat_index</span><span class="p">]])</span>
+
+<span class="k">for</span> <span class="n">coord_pair</span> <span class="ow">in</span> <span class="n">coords</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">coord_pair</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -153,10 +252,16 @@ separated by a comma and a space:</p>
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="what-we-are-doing.html">What we will accomplish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing-running.html">Writing code and running scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web.html">Exploiting the interwebz</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Working with files</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#scraping-a-file-for-email-addresses">Scraping a file for email addresses</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#writing-the-email-addresses-out-to-a-text-file">Writing the email addresses out to a text file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solution-scrape-email-addresses-py">Solution - scrape-email-addresses.py</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#parsing-a-text-file">Parsing a text file</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#solution">Solution</a></li>
 </ul>
 </li>
 </ul>
@@ -204,7 +309,7 @@ separated by a comma and a space:</p>
 
     <div class="footer">
         &copy; Copyright 2013, Center for Advanced Spatial Technologies.
-      Last updated on Sep 04, 2013.
+      Last updated on Sep 06, 2013.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
     </div>
     <!-- cloud_sptheme 1.4 -->

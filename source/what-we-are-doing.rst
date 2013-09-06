@@ -1,6 +1,16 @@
 What we will accomplish
 =======================
 
+* Environments and writing code
+
+  * Set up some environmental stuff
+  * Discuss using command prompts in:
+
+    * Windows
+    * ArcGIS
+    
+  * Python modules
+
 * Fetch files from web
 
   * CSV - NBI bridge data
