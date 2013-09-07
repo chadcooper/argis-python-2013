@@ -1,5 +1,6 @@
 import arcpy
 import os
+import datetime
 
 def parse_lat(in_lat):
     if in_lat:
@@ -11,27 +12,24 @@ def parse_lat(in_lat):
 
 def parse_lon(in_lon):
     if in_lon:
-        lonDeg = in_lon[0:3]
-        lonMin = in_lon[3:5] 
-        lonSec = in_lon[5:7] + "." + in_lon[7:9]  
-        lonDD = str('-'+str(int(lonDeg)+(float(lonMin)/60)+float(lonSec)/3600))
-        return float(lonDD)
+        lon_deg = in_lon[0:3]
+        lon_min = in_lon[3:5] 
+        lon_sec = in_lon[5:7] + "." + in_lon[7:9]  
+        lon_dd = str('-'+str(int(lon_deg)+(float(lon_min)/60)+float(lon_sec)/3600))
+        return float(lon_dd)
 
 try: 
     proj_dir = r"C:\Users\class5user\ar-gis-python"
-    input_file = open(os.path.join(proj_dir, "outputs", "dc.csv"), "r")
-
+    input_file = open(os.path.join(proj_dir, "outputs", "RI12.txt"), "r")
     # Figure out position of lat and long in the header
     header = input_file.readline()
     value_list = header.split(",")
-     
     lat_index = value_list.index("LAT_016")
     lon_index = value_list.index("LONG_017")
     structure_index = value_list.index("STRUCTURE_NUMBER_008")
-     
+    
     # Read lines in the file and append to coordinate list
     coords = []
-     
     for line in input_file.readlines():
         segmented_line = line.split(",")
         lat = parse_lat(segmented_line[lat_index])
@@ -39,18 +37,24 @@ try:
         coords.append([segmented_line[structure_index],
                        lon,
                        lat])
-
-    fc = os.path.join(proj_dir, "inputs", "shapefiles", "dc-bridges.shp")
+    fc = os.path.join(proj_dir, "inputs", "shapefiles", "ri-bridges.shp")
     for coord_pair in coords:
         if coord_pair[1]:
-            print coord_pair
-            cursor = arcpy.da.InsertCursor(fc, ["SHAPE@XY"])
-            xy = (coord_pair[1], coord_pair[2])
-            cursor.insertRow([xy])
+            print coord_pair[0]
+            row_values = (coord_pair[0].strip(),
+                          coord_pair[2],
+                          coord_pair[1],
+                          datetime.datetime.now(),
+                          (coord_pair[1], coord_pair[2]))
+            cursor = arcpy.da.InsertCursor(fc, ("StrxNo",
+                                                "Lat",
+                                                "Lon",
+                                                "DtCreated",
+                                                "SHAPE@XY"))
+            cursor.insertRow(row_values)
 except Exception as e:
    print e.message
 finally:
     # Cleanup the cursor if necessary
-    #
     if cursor:
         del cursor

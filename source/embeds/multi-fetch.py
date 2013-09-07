@@ -2,7 +2,7 @@ import urllib
 import os
 
 base_url = "http://www.fhwa.dot.gov/bridge/nbi/2012/delimited/"
-states = ["RI", "DE", "DC"]
+states = ["RI", "DE", "NV"]
 
 for state in states:
     url = base_url + state + "12.txt"

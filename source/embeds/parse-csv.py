@@ -1,6 +1,6 @@
 # Reads a NBI bridge data text file and writes the lat and long values
 #  to a list of coordinates
-input_file = open(r"C:\Users\class5user\ar-gis-python\outputs\dc.csv", "r")
+input_file = open(r"C:\Users\class5user\ar-gis-python\outputs\RI12.txt", "r")
  
 # Figure out position of lat and long in the header
 header = input_file.readline()
